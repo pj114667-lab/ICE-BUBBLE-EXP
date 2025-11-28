@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dry Ice Bubble Experiment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e5799 0%, #207cca 51%, #2989d8 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #207cca;
+            border-bottom: 2px solid #e6f2ff;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        h2 i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .text-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .image-content {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .experiment-img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .experiment-img:hover {
+            transform: scale(1.02);
+        }
+
+        .caption {
+            font-style: italic;
+            color: #666;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .material-item {
+            background-color: #e6f2ff;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .material-item:hover {
+            background-color: #cce5ff;
+            transform: translateY(-3px);
+        }
+
+        .safety-box {
+            background-color: #fff5f5;
+            border-left: 4px solid #ff6b6b;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .safety-box h3 {
+            color: #d63031;
+            margin-bottom: 0.5rem;
+        }
+
+        .conclusion-box {
+            background-color: #f0fff4;
+            border-left: 4px solid #38b2ac;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .conclusion-box h3 {
+            color: #2d7d7d;
+            margin-bottom: 0.5rem;
+        }
+
+        .step {
+            display: flex;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background-color: #207cca;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        footer {
+            background-color: #1e5799;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dry Ice Bubble Experiment</h1>
+        <p class="subtitle">Explore the fascinating science of sublimation with this exciting and visually stunning experiment</p>
+    </header>
+
+    <div class="container">
+        <section class="section" id="introduction">
+            <h2>Introduction</h2>
+            <div class="content">
+                <div class="text-content">
+                    <p>The dry ice bubble experiment is a captivating demonstration of phase changes and gas properties that never fails to amaze observers. When dry ice (solid carbon dioxide) sublimates, it transforms directly from a solid to a gas, creating dense fog that can be trapped in soap bubbles.</p>
+                    <p>This experiment beautifully illustrates scientific concepts like sublimation, density, and surface tension in a visually spectacular way. The resulting giant, fog-filled bubbles are not only mesmerizing to watch but also provide a tangible demonstration of scientific principles in action.</p>
+                </div>
+                <div class="image-content">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Dry ice experiment" class="experiment-img">
+                    <p class="caption">Fog-filled bubbles created with dry ice</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="aim">
+            <h2>Aim of Experiment</h2>
+            <div class="content">
+                <div class="text-content">
+                    <p>The primary objectives of this experiment are:</p>
+                    <ul>
+                        <li>To observe and understand the process of sublimation</li>
+                        <li>To demonstrate how carbon dioxide gas behaves when trapped</li>
+                        <li>To explore the properties of surface tension in bubble formation</li>
+                        <li>To create visually engaging fog-filled bubbles</li>
+                        <li>To learn about gas density and its effects on bubble behavior</li>
+                    </ul>
+                </div>
+                <div class="image-content">
+                    <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Science experiment setup" class="experiment-img">
+                    <p class="caption">Scientific observation and documentation</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="materials">
+            <h2>Materials Required</h2>
+            <div class="materials-grid">
+                <div class="material-item">Dry Ice</div>
+                <div class="material-item">Large Bowl or Container</div>
+                <div class="material-item">Warm Water</div>
+                <div class="material-item">Liquid Dish Soap</div>
+                <div class="material-item">Water</div>
+                <div class="material-item">Towel or Cloth</div>
+                <div class="material-item">Tongs or Gloves</div>
+                <div class="material-item">Safety Goggles</div>
+            </div>
+        </section>
+
+        <section class="section" id="procedure">
+            <h2>Procedure</h2>
+            <div class="content">
+                <div class="text-content">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <p><strong>Prepare the bubble solution:</strong> Mix liquid dish soap with water in a ratio of approximately 1:4. Stir gently to avoid creating too many bubbles.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <p><strong>Set up the container:</strong> Place a few pieces of dry ice in a large bowl or container. Add warm water to the container - the water should cover the dry ice but not overflow.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <p><strong>Create the fog:</strong> As the dry ice sublimates in the warm water, it will create a dense fog of carbon dioxide gas that will fill the container.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <p><strong>Form bubbles:</strong> Dip a towel or cloth strip into the bubble solution. Slowly drag the soaked cloth across the top of the container, trapping the fog inside giant bubbles.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <p><strong>Observe and experiment:</strong> Watch as the bubbles fill with fog and eventually burst, releasing the carbon dioxide gas. Try different techniques to create bubbles of various sizes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Experiment procedure" class="experiment-img">
+                    <p class="caption">Step-by-step experimental setup</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="observation">
+            <h2>Observation</h2>
+            <div class="content">
+                <div class="text-content">
+                    <p>During the experiment, you will observe several fascinating phenomena:</p>
+                    <ul>
+                        <li>Immediate production of dense, white fog when dry ice contacts warm water</li>
+                        <li>The fog flows downward and collects in the container due to CO₂ being denser than air</li>
+                        <li>Bubbles formed on the container's surface fill with the white fog</li>
+                        <li>Some bubbles may sink initially before rising as they warm</li>
+                        <li>When bubbles burst, the fog flows out in dramatic wisps</li>
+                        <li>Bubbles may appear to "dance" on the surface of the fog</li>
+                    </ul>
+                </div>
+                <div class="image-content">
+                    <img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Observation of dry ice bubbles" class="experiment-img">
+                    <p class="caption">Fog-filled bubbles in action</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="explanation">
+            <h2>Scientific Explanation</h2>
+            <div class="content">
+                <div class="text-content">
+                    <p>The dry ice bubble experiment demonstrates several important scientific principles:</p>
+                    
+                    <h3>Sublimation</h3>
+                    <p>Dry ice is solid carbon dioxide (CO₂) at -78.5°C (-109.3°F). Unlike most solids, it doesn't melt into a liquid but instead undergoes sublimation - transitioning directly from solid to gas when it gains sufficient energy from the warm water.</p>
+                    
+                    <h3>Gas Density</h3>
+                    <p>Carbon dioxide gas is about 1.5 times denser than air. This is why the fog flows downward and collects in the container, allowing it to be trapped inside bubbles.</p>
+                    
+                    <h3>Surface Tension</h3>
+                    <p>The soap solution creates a thin film with surface tension that can trap gases. When drawn across the container, this film captures the dense CO₂ fog, forming bubbles.</p>
+                    
+                    <h3>Nucleation</h3>
+                    <p>The warm water provides nucleation sites where gas bubbles can form more easily, accelerating the sublimation process and creating the dramatic fog effect.</p>
+                </div>
+                <div class="image-content">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Scientific concepts" class="experiment-img">
+                    <p class="caption">Visualizing scientific principles</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="safety">
+            <h2>Safety Precautions</h2>
+            <div class="safety-box">
+                <h3>Important Safety Information</h3>
+                <p>Dry ice is extremely cold and can cause frostbite upon direct contact with skin. Always follow these safety guidelines:</p>
+                <ul>
+                    <li>Always wear insulated gloves or use tongs when handling dry ice</li>
+                    <li>Wear safety goggles to protect your eyes from potential splashes</li>
+                    <li>Only use dry ice in well-ventilated areas to prevent CO₂ buildup</li>
+                    <li>Never seal dry ice in an airtight container as pressure buildup could cause an explosion</li>
+                    <li>Do not touch dry ice with bare skin</li>
+                    <li>Keep dry ice away from children and pets</li>
+                    <li>Do not store dry ice in a standard freezer as it will cause the thermostat to shut off</li>
+                    <li>Dispose of unused dry ice by leaving it in a well-ventilated area at room temperature</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="conclusion">
+            <h2>Conclusion</h2>
+            <div class="conclusion-box">
+                <h3>Key Takeaways</h3>
+                <p>The dry ice bubble experiment successfully demonstrates the fascinating process of sublimation and the unique properties of carbon dioxide gas. Through this experiment, we observe how dry ice transforms directly from solid to gas when exposed to warmer temperatures, creating dense fog that can be captured in soap bubbles.</p>
+                <p>This experiment not only provides a visually stunning display but also serves as an excellent educational tool for understanding phase changes, gas density, and surface tension. The safety precautions highlighted throughout the experiment emphasize the importance of proper handling techniques when working with materials like dry ice.</p>
+                <p>By combining scientific principles with hands-on experimentation, the dry ice bubble activity makes abstract concepts tangible and memorable for learners of all ages.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Dry Ice Bubble Experiment | Educational Science Project</p>
+        <p>Always practice safety first when conducting scientific experiments</p>
+    </footer>
+</body>
+</html>
